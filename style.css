@@ -1,0 +1,648 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #3C3E3C;
+}
+
+html {
+  background-color: #F0E0D8;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.125em;
+}
+
+header {
+  width: 100%;
+  height: 4.375em;
+  position: fixed;
+  background-color: #335c67;
+  top: 0;
+  z-index: 2;
+}
+
+.languages {
+  float: right;
+  margin: 1em;
+  cursor: pointer;
+}
+
+.languages img {
+  height: 1em;
+  width: 1.25em;
+  padding: 0.3125em;
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  background: #335c67;
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+  clip-path: circle(0px at top right);
+  transition: all ease-in-out 500ms;
+}
+
+.menu--open {
+  height: auto;
+  clip-path: circle(150% at top right)
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  border-bottom: 1px solid #eee2dc;
+  list-style: none;
+}
+
+.menu li:last-child {
+  border-bottom: none;
+}
+
+.menu li:first-child {
+  border-top: 1px solid #eee2dc;
+}
+
+.menu a {
+  color: #f8bd7f;
+  text-decoration: none;
+  display: block;
+  padding: 2em 4em 2em 1.5em;
+}
+
+.menu a:hover,
+.menu a:focus {
+  background: #4C6E78;
+  color: #F5E3AC;
+}
+.menu--icon {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-right: 1em;
+  width: 1.15em;
+  text-align: right;
+  opacity: 0.5;
+}
+
+.menu-toggle {
+  padding: 1em;
+  position: absolute;
+  top: .65em;
+  right: 6em;
+  cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  background: #f8bd7f;
+  height: 3px;
+  width: 1.5em;
+  border-radius: 3px;
+  transition: all ease-in-out 500ms;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+.open .hamburger {
+  transform: rotate(45deg);
+}
+
+.open .hamburger::before {
+  opacity: 0;
+}
+
+.open .hamburger:after {
+  transform: translateY(-2.5px) rotate(-90deg);
+}
+
+@media (min-width: 1150px) {
+  .menu li:first-child {
+    border-top: none;
+  }
+  .languages img {
+    height: 25px;
+    width: 35px;
+  }
+  .menu-toggle {
+    display: none;
+  }
+  .menu {
+    height: auto;
+    position: relative;
+    background: transparent;
+    float: right;
+    top: 30%;
+    clip-path: none;
+    transition: none;
+  }
+  .menu li {
+    display: inline-block;
+    border: none;
+  }
+  .menu a {
+    padding: 0;
+    margin-left: 3em;
+  }
+  .menu a:hover,
+  .menu a:focus {
+    background: transparent;
+  }
+  .menu .menu--icon {
+    display: none;
+  }
+}
+
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  top: 4.375em;
+  width: 100%;
+  height: 80vh;
+  display: inline-block;
+  margin-bottom: 6.25em;
+}
+
+.name-strip {
+  line-height: 1.5;
+  background-color: rgba(237, 199, 183, 0.6);
+}
+
+.name::after {
+  content: '';
+  background-image: url(./images/desk2.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.8;
+  z-index: -1;
+  position: absolute;
+  top: 4.375em;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 75vh;
+}
+
+.name h1, h3 {
+  text-align: center;
+}
+
+.name h1 {
+  margin-top: 15%;
+}
+
+.read-more {
+  position: relative;
+  text-align:center;
+  bottom: 5vh;
+}
+
+.read-more p {
+  font-size: 1.5em;
+}
+
+.read-more i {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.about-me , .why-programming, .who-am-i-intro, .my-skills{
+  margin: 0 11em;
+  line-height: 1.5;
+}
+
+.about-me , .why-programming {
+  position: relative;
+  overflow: hidden;
+}
+
+hr {
+  width: 60%;
+  margin: auto;
+  border: 1px solid #636463;
+  margin-top: 6.25em;
+  margin-bottom: 6.25em;
+}
+
+.about-header {
+  transform: translateX(100vw);
+  transition: 1500ms;
+}
+.about-header.active {
+  transform: translateX(0);
+  padding-bottom: 3.125em;
+}
+
+.about-text {
+  transform: translateX(-100vw);
+  transition: 1500ms;
+}
+
+.about-text.active {
+  transform: translateX(0);
+  padding-bottom: 3.125em;
+}
+
+.who-am-i div {
+  margin-top: 1.5em;
+}
+
+.who-am-i--blocks {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.who-am-i--description {
+  height: 350px;
+  width: 325px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  border: 5px solid #335c67;
+  border-radius: 15%;
+  overflow: hidden;
+  position: relative;
+}
+
+.who-am-i--question {
+  display: block;
+  padding: 45% 5% 45% 5%;
+  font-size: 20px;
+}
+
+.who-am-i--answer {
+  display: none;
+  padding: 15% 5% 15% 5%;
+  font-size: 18px;
+  color: #EDD3C4;
+}
+
+.who-am-i--answer2 {
+  display: none;
+  font-size: 18px;
+  color: #EDD3C4;
+}
+
+.who-am-i--favorites-slides {
+  display: inline-block;
+  width: 2000px;
+}
+
+.who-am-i-random {
+  float: left;
+  display: inline-block;
+  list-style: none;
+  width: 325px;
+  height: 280px;
+  top: 0;
+}
+
+.who-am-i-random p {
+  color: #EDD3C4;
+  font-size: 18px;
+  padding: 15% 0;
+}
+
+.all-skills {
+  display: flex;
+  justify-content: space-around;
+}
+
+.skills-list {
+  padding-top: 3.125em;
+  display: flex;
+  justify-content: space-around;
+  line-height: 1.75em;
+}
+
+.skills-list p {
+  font-weight: bold;
+  padding-bottom: 0.625em;
+}
+
+.skills-list li {
+  position: relative;
+  left: 1em;
+}
+
+.project {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.project-blocks {
+  width: 45vw;
+  height: 30vh;
+  min-width: 225px;
+  min-height: 175px;
+  max-width: 550px;
+  max-height: 400px;
+  position: relative;
+  border: 3px #335c67 solid;
+  border-radius: 15px;
+  margin-top: 5%;
+}
+
+.project-blocks a {
+  position: relative;
+}
+
+.technology-description {
+  position: absolute;
+  color: #3C3E3C;
+  font-weight: bold;
+  left: 1em;
+  top: 8%;
+  line-height: 1em;
+  text-align: center;
+  transform: scale(0);
+  transition: 500ms;
+}
+
+.dividing-line1, .dividing-line2 {
+  position: absolute;
+  transform: scale(0);
+  transition: 500ms;
+  top: 3.5em;
+  left: 1em;
+  margin-top: 0;
+  margin-bottom: 0
+}
+
+.project-description {
+  position: absolute;
+  transform: scale(0);
+  transition: 500ms;
+  color: #3C3E3C;
+  float: right;
+  bottom: 8%;
+  right: 8%;
+  width: 75%;
+}
+
+.project1 img, .project2 img {
+  width: 45vw;
+  height: 30vh;
+  max-width: 550px;
+  max-height: 400px;
+  min-width: 225px;
+  min-height: 175px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.not-enough {
+  background-color: inherit;
+  max-width: 500px;
+}
+
+.not-enough p {
+  text-align: center;
+  padding: 0 5vw;
+  padding-top: 12vh;
+}
+
+.all-means-of-contact {
+  display: flex;
+  justify-content: center;
+}
+
+.my-contact {
+  text-align: center;
+}
+
+.my-contact p {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em
+}
+
+.my-contact i {
+  font-size: 3.125em;
+}
+
+.mean-of-contact {
+  margin: 1.5em 10%;
+  width: 10%;
+}
+
+.mean-of-contact a {
+  text-decoration: none;
+}
+
+.mail {
+  white-space: nowrap;
+}
+
+.footer {
+  margin-top: 3.125em;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .main, .intro{
+    font-size: 10px;
+  }
+  header {
+    height: 3.5em;
+  }
+  .menu a {
+    padding: 1em 2em 1em .5em;
+    font-size: 0.75em;
+  }
+  .menu--icon {
+    font-size: 1em;
+    width: 1em;
+  }
+  .name h1 {
+    margin-top: 30%;
+  }
+  .name::after {
+    top: 3.5em;
+  }
+  .about-me , .why-programming, .who-am-i-intro, .who-am-i{
+    margin: 0 4em;
+    text-align: justify;
+  }
+  .my-skills {
+    margin: 0 6em;
+    text-align: left;
+  }
+  .who-am-i--blocks {
+    flex-direction: column;
+  }
+  .who-am-i--description {
+    margin: auto;
+    height: 250px;
+    width: 200px;
+    border: 3px solid #335c67;
+  }
+  .who-am-i--answer {
+    font-size: 10px;
+  }
+  .who-am-i-random {
+    width: 200px;
+    height: 150px;
+  }
+  .who-am-i-random p {
+    font-size: 10px;
+  }
+  .skills-list {
+    margin: 0 7%;
+  }
+  .project-blocks {
+    min-width: 225px;
+    min-height: 175px;
+    max-width: 300px;
+    max-height: 215px;
+  }
+  .project1 img, .project2 img {
+    min-width: 225px;
+    min-height: 175px;
+    max-width: 300px;
+    max-height: 215px;
+  }
+  .project-description {
+    bottom: 8%;
+    right: 8%;
+    width: 80%;
+  }
+  .all-means-of-contact {
+    flex-direction: column;
+  }
+  .mean-of-contact {
+    margin: 0 auto;
+    width: 50%;
+  }
+  .contact-inside {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .main, .intro{
+    font-size: 14px;
+  }
+  header {
+    height: 3.5em;
+  }
+  .name h1 {
+    margin-top: 20%;
+  }
+  .name::after {
+    top: 3.5em;
+  }
+  .about-me , .why-programming, .who-am-i, .who-am-i-intro, .my-skills{
+    margin: 0 7em;
+    text-align: justify;
+  }
+  .my-skills {
+    text-align: left;
+  }
+  .who-am-i--blocks {
+    flex-direction: column;
+  }
+  .who-am-i--description {
+    margin: auto;
+  }
+  .who-am-i--answer {
+    font-size: 14px;
+  }
+  .who-am-i-random p {
+    font-size: 14px;
+  }
+  .project-blocks {
+    min-width: 350px;
+    min-height: 200px;
+    max-width: 400px;
+    max-height: 315px;
+  }
+  .project1 img, .project2 img {
+    min-width: 350px;
+    min-height: 200px;
+    max-width: 400px;
+    max-height: 315px;
+  }
+  .project-description {
+    bottom: 8%;
+    right: 8%;
+    width: 80%;
+  }
+  .all-means-of-contact {
+    flex-direction: column;
+  }
+  .mean-of-contact {
+    margin: 0 auto;
+    width: 50%;
+  }
+  .contact-inside {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .about-me , .why-programming, .who-am-i, .who-am-i-intro, .my-skills{
+    text-align: justify;
+  }
+  .my-skills {
+    margin: 0 8em;
+    text-align: left;
+  }
+  .who-am-i--blocks {
+    flex-direction: column;
+  }
+  .who-am-i--description {
+    margin: auto;
+  }
+  .project-blocks {
+    max-width: 450px;
+    max-height: 350px;
+  }
+  .project1 img, .project2 img {
+    max-width: 450px;
+    max-height: 350px;
+  }
+  .project-description {
+    width: 70%;
+  }
+  .contact-inside {
+    white-space: nowrap;
+  }
+}
+@media only screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+  .name::after {
+    content: '';
+    background-attachment: scroll;
+    background-size: cover;
+    top: 3.5em;
+  }
+}
