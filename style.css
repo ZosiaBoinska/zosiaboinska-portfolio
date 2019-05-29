@@ -269,6 +269,23 @@ hr {
   padding-bottom: 3.125em;
 }
 
+.between-photo1{
+  background-image: url('./images/about-me.jpg');
+}
+
+.between-photo2{
+  background-image: url('./images/programming-skills.jpg');
+}
+
+.between-photo1, .between-photo2 {
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-bottom: 5vh;
+}
+
 .who-am-i div {
   margin-top: 1.5em;
 }
@@ -497,6 +514,9 @@ hr {
     margin: 0 6em;
     text-align: left;
   }
+  .between-photo1, .between-photo2 {
+    height: 250px;
+  }
   .who-am-i--blocks {
     flex-direction: column;
   }
@@ -565,6 +585,9 @@ hr {
     margin: 0 7em;
     text-align: justify;
   }
+  .between-photo1, .between-photo2 {
+    height: 300px;
+  }
   .my-skills {
     text-align: left;
   }
@@ -612,6 +635,9 @@ hr {
 @media (min-width: 901px) and (max-width: 1200px) {
   .about-me , .why-programming, .who-am-i, .who-am-i-intro, .my-skills{
     text-align: justify;
+  }
+  .between-photo1, .between-photo2 {
+    height: 350px;
   }
   .my-skills {
     margin: 0 8em;
